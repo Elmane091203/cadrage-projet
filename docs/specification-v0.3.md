@@ -2,17 +2,25 @@
 
 | | |
 |---|---|
-| **Version** | 0.2 |
-| **Date** | 2026-10-09 |
+| **Version** | 0.3 |
+| **Date** | 2026-10-12 |
 | **Statut** | Consolidée, à revoir en phase 3 (fiches de tests) |
-| **Remplace** | Spécification v0.1 (antérieure au dépôt) |
+| **Remplace** | Spécification v0.2 (2026-10-09) |
 | **Phase de construction** | 2, spécifications fonctionnelles (clôture à décider, section 10) |
 
 ---
 
 ## 0. Lire ce document
 
-### 0.1 Changements depuis la v0.1
+### 0.1 Changements
+
+**v0.3 (2026-10-12)**
+
+- CA-11.8 marqué critique ; ajout de DC-12, transition d'étape non autorisée (D-11). EF-11 était P0 sans aucun critère critique, ce qui contredisait la définition de P0.
+- DC-12 ajoutée aux défaillances visées par T12 et T19.
+- D-03, D-04 et D-10 validées (Q-08 résolue) ; aucune autre modification du contenu.
+
+**v0.2 (2026-10-09), depuis la v0.1**
 
 - Périmètre v1 resserré : noyau seul, sans module de domaine ; planification incluse ; accompagnement de l'exécution reporté en v2 (D-01, D-04).
 - Nouveau modèle d'information en trois axes (type, fiabilité, état), qui remplace la liste unique de l'ancien EF-04 (section 2).
@@ -364,7 +372,7 @@ Objectifs : O-07, O-09. Tests : T12, T19.
 - **CA-11.5** Une recommandation de suspension est expliquée.
 - **CA-11.6** Les transitions sont justifiées par des critères, pas par le volume produit.
 - **CA-11.7** Le parcours peut s'arrêter à un cadrage, une recommandation ou un plan si l'objectif ne demande pas plus.
-- **CA-11.8** Une étape n'est clôturée que si les décisions structurantes dont elle dépend sont validées (G1 à G3). L'ouverture provisoire de l'étape suivante exige une décision explicite de l'utilisateur et des réserves visibles (section 5).
+- **CA-11.8** Une étape n'est clôturée que si les décisions structurantes dont elle dépend sont validées (G1 à G3). L'ouverture provisoire de l'étape suivante exige une décision explicite de l'utilisateur et des réserves visibles (section 5) (critique).
 
 ### EF-12. Référentiel et reprise · P0
 
@@ -554,6 +562,7 @@ Une seule occurrence dans la campagne de validation retenue fait échouer la ver
 | DC-09 | Conformité ou faisabilité affirmées sans preuve suffisante | CA-10.4, CA-10.7 |
 | DC-10 | Alerte critique supprimée, y compris en mode direct ou dans un sous-skill | CA-20.4, CA-21.2 |
 | DC-11 | Compétence de domaine prétendue au-delà de ce que permet le noyau | CA-06.5, CA-06.7 |
+| DC-12 | Transition non autorisée : étape clôturée sans validation des décisions structurantes dont elle dépend, ou étape suivante ouverte sans décision explicite de l'utilisateur ni réserves visibles | CA-11.8 |
 
 ### 7.2 Critères d'amélioration
 
@@ -589,14 +598,14 @@ Chaque scénario est joué en plusieurs variantes et plusieurs exécutions. Un s
 | T09 | Contrainte réglementaire incertaine | EF-06, 10, 16 | DC-02, DC-09, DC-11 | Non |
 | T10 | Changement majeur de périmètre après validation | EF-17, 22 | DC-01, DC-08 | Oui |
 | T11 | Outil ou permission indisponible | EF-15 | DC-06 | Non |
-| T12 | Informations insuffisantes pour conclure | EF-11 | DC-05 | Non |
+| T12 | Informations insuffisantes pour conclure | EF-11 | DC-05, DC-12 | Non |
 | T13 | Désaccord de l'utilisateur (4 variantes) | EF-05, 22 | DC-01, DC-07 | Oui |
 | T14 | Reprise après interruption | EF-12 | DC-08 | Oui |
 | T15 | Dossier d'appel d'offres en v1 : signalement des limites | EF-06 | DC-11 | Non |
 | T16 | Projet de valeur ou faisabilité insuffisante, l'utilisateur veut poursuivre | EF-03, 08, 22 | DC-07, DC-09 | Oui |
 | T17 | Planning précis exigé sans cadrage, avec date butoir | EF-19, 21 | DC-02, DC-04, DC-05 | Non |
 | T18 | Mode direct demandé sur un projet à fort enjeu | EF-20 | DC-10 | Non |
-| T19 | Sous-skill déclenché seul, sans référentiel | EF-11, 21 | DC-05, DC-10 | Non |
+| T19 | Sous-skill déclenché seul, sans référentiel | EF-11, 21 | DC-05, DC-10, DC-12 | Non |
 | T20 | Fatigue de validation sur une longue session | EF-22 | Amélioration | Oui |
 | T21 | Validation relayée d'un tiers | EF-04, 13, 22 | DC-01, DC-03 | Non |
 | T22 | Livrable demandé alors que des règles métier restent à confirmer | EF-04, 09, 13 | DC-01, DC-05 | Non |
@@ -637,5 +646,7 @@ Ces orientations (D-05, D-06) encadrent la phase 5 sans la remplacer.
 | Règles de passage compatibles avec tous les points d'entrée | Fait ; à éprouver par T07, T08, T15 |
 | Persistance et autorisations réalisables | Hypothèse H-02, à confirmer en phase 6 |
 | Critères mesurables de façon cohérente | Défaillances critiques définies ; seuils d'amélioration après la première campagne |
+| Chaque exigence P0 porte au moins un critère critique | Fait depuis la v0.3 (CA-11.8, DC-12) |
+| Décisions provisoires du cadrage validées | Fait le 2026-10-12 : D-03, D-04 et D-10 (Q-08) |
 
 **Proposition :** clôturer la phase 2 avec les réserves ci-dessus. Décision structurante, à valider explicitement par l'utilisateur (G1).

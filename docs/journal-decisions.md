@@ -6,7 +6,7 @@
 - Une entrée validée n'est jamais modifiée ni supprimée. Elle est remplacée par une nouvelle entrée qui la référence (R4).
 - L'utilisateur est l'unique décideur (G4).
 
-**Phase de construction en cours :** 2, spécifications fonctionnelles. Spécification en vigueur : `specification-v0.2.md`.
+**Phase de construction en cours :** 3 à 8 menées de front depuis le 2026-10-12 (D-13) ; version 0.1.0 du skill implémentée, provisoire. Phase 2 clôturée avec réserves le 2026-10-12 (D-12). Spécification en vigueur : `specification-v0.3.md`.
 
 ---
 
@@ -17,7 +17,7 @@
 - **État :** validé, 2026-10-09
 - **Décision :** la v1 ne comporte aucun module de domaine.
 - **Options écartées :**
-  - noyau + logiciel/ERP, recommandé par l'assistant parce que les scénarios existants y étaient déjà centrés ;
+  - noyau + logiciel/ERP, recommandation initiale de conception, parce que les scénarios existants y étaient déjà centrés ;
   - noyau + appels d'offres.
 - **Conséquences :**
   - EF-14 sort de la v1 ;
@@ -36,14 +36,15 @@
 
 ### D-03. Abandon des niveaux L1, L3, L5
 
-- **État :** provisoire. Non objecté, jamais validé explicitement (Q-08).
+- **État :** validé, 2026-10-12 (Q-08). Auparavant provisoire, non objecté.
 - **Contexte :** notion évoquée dans des échanges antérieurs sans être définie, absente de la mission.
+- **Conséquence :** le besoin de graduation est couvert par l'intensité légère, standard ou approfondie (G5).
 
 ### D-04. Planification incluse dans la v1
 
 - **État :**
   - planification en v1 : validé, 2026-10-09 ;
-  - accompagnement de l'exécution reporté en v2, garde-fous d'action conservés en v1 : provisoire, non objecté (Q-08).
+  - accompagnement de l'exécution reporté en v2, garde-fous d'action conservés en v1 : validé, 2026-10-12 (Q-08), décision structurante (retrait de périmètre). Auparavant provisoire, non objecté.
 - **Conséquences :**
   - ajout d'EF-19 ;
   - EF-15 réduit à ses garde-fous ;
@@ -91,11 +92,11 @@
 | B6. Sous-skill seul | B : vérification des préconditions, questions limitées ou mode direct | G6 |
 | B7. Référentiel | A : mise à jour à chaque décision | G7 |
 
-- **Écarts avec les recommandations de l'assistant :**
-  - B1 : l'assistant recommandait de ne valider explicitement que les décisions structurantes ;
-  - B3 : il recommandait de s'incliner après un exposé unique ;
-  - B4 : il recommandait de tracer le titulaire de chaque décision ;
-  - B7 : il recommandait des jalons quand l'environnement ne conserve pas les fichiers.
+- **Écarts avec les recommandations initiales :**
+  - B1 : la recommandation initiale était de ne valider explicitement que les décisions structurantes ;
+  - B3 : la recommandation initiale était de s'incliner après un exposé unique ;
+  - B4 : la recommandation initiale était de tracer le titulaire de chaque décision ;
+  - B7 : la recommandation initiale était de prévoir des jalons quand l'environnement ne conserve pas les fichiers.
 - **Conséquences :**
   - risque de fatigue de validation (RQ-02, T20) ;
   - validation par un consultant à la place du client (RQ-07) ;
@@ -103,8 +104,65 @@
 
 ### D-10. Modèle d'information en trois axes (R1 à R6)
 
-- **État :** provisoire. Présenté le 2026-10-09, non objecté, jamais validé explicitement (Q-08).
-- **Décision proposée :** type, fiabilité avec origine, état ; règles R1 à R6 (spécification, section 2).
+- **État :** validé, 2026-10-12 (Q-08), décision structurante. Présenté le 2026-10-09, resté provisoire jusque-là.
+- **Décision :** type, fiabilité avec origine, état ; règles R1 à R6 (spécification, section 2).
+- **Réserve connue :** hypothèse et interprétation partagent la fiabilité « supposé », pour que la notation reste reproductible.
+
+### D-11. EF-11 : critère critique et défaillance DC-12
+
+- **État :** validé, 2026-10-12, décision structurante.
+- **Constat :** EF-11 était classée P0 sans aucun critère critique ni défaillance associée, contrairement à la définition de P0 (« son absence produit une défaillance critique »).
+- **Décision :** CA-11.8 est marqué critique ; création de DC-12, transition non autorisée (étape clôturée sans validation des décisions structurantes, ou étape suivante ouverte sans décision explicite et réserves visibles).
+- **Options écartées :**
+  - rattacher CA-11.8 à DC-01 : la fausse validation est une notion voisine, et l'élargir la rendrait moins nette à noter ;
+  - passer EF-11 en P1 : une transition prématurée cesserait d'être bloquante.
+- **Conséquences :** spécification v0.3 ; T12 et T19 visent DC-12 ; les fiches de tests de la phase 3 doivent l'observer.
+
+### D-12. Clôture de la phase 2
+
+- **État :** validé, 2026-10-12, décision structurante.
+- **Décision :** la phase 2 est clôturée sur la base de la spécification v0.3 ; la phase 3 est ouverte.
+- **Réserves acceptées :**
+  - la persistance sur claude.ai n'est pas garantie (RQ-06) et le format du référentiel reste une hypothèse (H-02, Q-04), à traiter en phase 6 ;
+  - le dispositif des tests multi-tours n'est pas conçu (Q-02), à traiter en phase 3.
+- **Conséquence :** la phase 3 peut rouvrir la spécification si une fiche de test révèle un critère intestable ; toute modification donnera une nouvelle version.
+
+### D-13. Implémentation anticipée de la version 0.1.0
+
+- **État :** décidé par l'utilisateur, 2026-10-12, par instruction explicite : « Agis de manière autonome et produis un skill correct et valide couvrant exactement les exigences, sans être superficiel ni superflu ».
+- **Décision :** implémenter le skill sans attendre la clôture formelle des phases 3 à 6. Les choix que ces phases auraient dû soumettre sont pris à titre provisoire (D-14 à D-16) et restent à valider.
+- **Conséquences :**
+  - la règle « aucune implémentation avant la phase 7 » de `CLAUDE.md` est levée ;
+  - la version 0.1.0 est provisoire : aucun de ses choix n'est validé, et sa validité n'est démontrée que par les contrôles et la campagne décrits dans `tracabilite-v0.1.md` ;
+  - risque : une décision de phase 5 ou 6 refusée par l'utilisateur obligera à reprendre une partie de l'implémentation.
+
+### D-14. Architecture de la version 0.1.0 (phase 5)
+
+- **État :** provisoire, proposé le 2026-10-12, à valider (décision structurante).
+- **Décision proposée :**
+  - un plugin `cadrage-projet` qui contient six skills : l'orchestrateur `cadrage-projet`, qui porte le noyau (détection, intensité, clarification, diagnostic, cadrage, parcours, référentiel), et cinq skills spécialisés : `cadrage-audit`, `cadrage-solutions`, `cadrage-exigences`, `cadrage-faisabilite`, `cadrage-planification` ;
+  - nommage (Q-06) : préfixe commun `cadrage-`, pour éviter les collisions quand un skill est installé seul ;
+  - les cinq candidats de la spécification (section 9) satisfont le critère de découpage : chacun a de la valeur appelé seul, un déclencheur propre et des tests dédiés ; clarification et diagnostic restent dans le noyau ;
+  - pas de sous-agent relecteur (Q-07), hors v1 selon la spécification (section 1.3).
+- **Options écartées :** un skill unique avec fichiers de référence. Il serait plus simple et éviterait la recopie du noyau, mais il contredit l'orientation validée en D-05 et ne permet pas de tester EF-21.
+- **Risque :** activation concurrente ou absente des skills (RQ-04), mesurée par l'indicateur d'activation des évals.
+
+### D-15. Choix techniques de la version 0.1.0 (phase 6)
+
+- **État :** provisoire, proposé le 2026-10-12, à valider.
+- **Décisions proposées :**
+  - Q-04 : référentiel en Markdown à tableaux, une ligne par élément, à `cadrage/referentiel.md` dans le répertoire de travail ; modèle `commun/referentiel-modele.md`. Markdown plutôt que YAML, parce qu'il est lisible par un utilisateur novice et facile à modifier ligne par ligne (G7) ;
+  - Q-05 : instructions en français ; le skill répond dans la langue de l'utilisateur ; descriptions en français avec quelques mots-clés anglais pour le déclenchement ;
+  - ENF-06 : le noyau a une source unique, `commun/`. `outils/synchroniser.py` injecte les invariants dans chaque `SKILL.md` et copie `noyau.md` et le modèle de référentiel dans chaque skill ; son mode `--verifier` contrôle la synchronisation et les contraintes de format ;
+  - tests (Q-02, en partie) : `claude plugin eval`, avec un bras sans plugin, des grilles bloquantes notées par un modèle et un indicateur d'activation. Les scénarios multi-tours ne sont pas couverts.
+- **Hypothèse :** le format `prompt.md` des évals ne joue qu'un tour ; la prise en charge d'un dialogue scripté n'est pas vérifiée.
+
+### D-16. Application de G1 et calibrage de G5 (Q-01, Q-03)
+
+- **État :** provisoire, proposé le 2026-10-12, à valider.
+- **Décisions proposées :**
+  - Q-01 : l'interprétation de la spécification est retenue (décisions provisoires au sein d'une étape, validées avant sa clôture). Un « ok » ou « continue » ne vaut validation que s'il répond clairement à la question de validation ; en cas de doute, le skill demande une confirmation courte ;
+  - Q-03 : critères qualitatifs d'intensité (noyau, G5) ; au plus trois questions par échange en standard et approfondie, une en légère, aucune en mode direct.
 
 ---
 
@@ -121,14 +179,14 @@
 
 | ID | Question | Échéance |
 |---|---|---|
-| Q-01 | Application de G1 : travail sur des décisions provisoires au sein d'une étape, validation avant sa clôture. | Phase 3 |
-| Q-02 | Dispositif des tests multi-tours : tours scriptés ou utilisateur simulé. | Phases 3 et 6 |
-| Q-03 | Calibrage des seuils d'intensité (G5) et du nombre de questions par échange (CA-02.4). | Phase 3 |
-| Q-04 | Format du référentiel : Markdown, YAML ou autre. | Phase 6 |
-| Q-05 | Langue des instructions du skill. | Phase 6 |
-| Q-06 | Nommage des sous-skills. | Phase 5 |
-| Q-07 | Sous-agent relecteur critique, propre à Claude Code. | Phase 5 |
-| Q-08 | Validation explicite de D-03, de D-04 (exécution en v2) et de D-10. | Revue de la v0.2 |
+| Q-01 | Application de G1 : travail sur des décisions provisoires au sein d'une étape, validation avant sa clôture. | Réponse provisoire D-16, à valider |
+| Q-02 | Dispositif des tests multi-tours : tours scriptés ou utilisateur simulé. | Ouverte : tests à un tour seulement (D-15) |
+| Q-03 | Calibrage des seuils d'intensité (G5) et du nombre de questions par échange (CA-02.4). | Réponse provisoire D-16, à valider |
+| Q-04 | Format du référentiel : Markdown, YAML ou autre. | Réponse provisoire D-15, à valider |
+| Q-05 | Langue des instructions du skill. | Réponse provisoire D-15, à valider |
+| Q-06 | Nommage des sous-skills. | Réponse provisoire D-14, à valider |
+| Q-07 | Sous-agent relecteur critique, propre à Claude Code. | Hors v1 (spécification, section 1.3) |
+| Q-08 | Validation explicite de D-03, de D-04 (exécution en v2) et de D-10. | Résolue le 2026-10-12 : les trois sont validées |
 | Q-09 | Seuils des critères d'amélioration. | Après la première campagne |
 
 ---
@@ -149,8 +207,8 @@
 
 ## Prochaines étapes
 
-1. Revue de la v0.2 par l'utilisateur : décider de la clôture de la phase 2 (spécification, section 10) et traiter Q-08.
-2. Phase 3 : fiches de tests complètes T01 à T24, protocole de notation, dispositif multi-tours. En option, une sonde de comportement sur T03, T05, T13 et T17, jouée contre un simple énoncé des principes du noyau.
+1. Phase 2 clôturée (D-12).
+2. Phase 3 : traiter Q-01, Q-02 et Q-03 ; fiches de tests complètes T01 à T24, protocole de notation, dispositif multi-tours. En option, une sonde de comportement sur T03, T05, T13 et T17, jouée contre un simple énoncé des principes du noyau.
 3. Phase 4 : matrice de traçabilité objectifs → exigences → critères → tests.
 4. Phases 5 à 9 selon `mission.md`.
 
@@ -161,3 +219,5 @@
 | Date | Événement |
 |---|---|
 | 2026-10-09 | Création du dépôt ; spécification v0.2 ; décisions D-01 à D-10 |
+| 2026-10-12 | Neutralisation rédactionnelle des mentions d'auteur, sans changement de fond (y compris dans D-01 et D-09, par exception à R4 sur instruction de l'utilisateur) |
+| 2026-10-12 | Validation de D-03, D-04 (exécution en v2) et D-10 ; Q-08 résolue ; D-11 ; spécification v0.3 ; clôture de la phase 2 avec réserves (D-12) |

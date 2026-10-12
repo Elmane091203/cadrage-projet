@@ -1,0 +1,7 @@
+# Rapports bruts des campagnes d'évaluation (régénérables)
+plugins/cadrage-projet/evals/results/
+docs/campagnes/
+__pycache__/
+
+# Consignes locales de l'outil (non publiées)
+CLAUDE.md

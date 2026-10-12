@@ -1,0 +1,15 @@
+{
+  "name": "cadrage-projet",
+  "description": "Marketplace du plugin cadrage-projet : skills d'accompagnement au cadrage de projet.",
+  "owner": {
+    "name": "Elmane091203"
+  },
+  "plugins": [
+    {
+      "name": "cadrage-projet",
+      "source": "./plugins/cadrage-projet",
+      "description": "Skills de cadrage de projet : de l'idée floue au plan justifié, avec statut des informations et validation explicite des décisions.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "cadrage-projet",
+  "version": "0.1.0",
+  "description": "Famille de skills de cadrage de projet : clarification, diagnostic, cadrage, audit de l'existant, comparaison de solutions, exigences et critères d'acceptation, faisabilité et risques, planification. Distingue vérifié, déclaré et supposé ; fait valider les décisions par l'utilisateur ; tient un référentiel du projet.",
+  "author": {
+    "name": "Elmane091203"
+  },
+  "license": "MIT",
+  "keywords": ["cadrage", "projet", "exigences", "planification", "faisabilité", "gestion de projet"]
+}
